@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
+set -e
+set -x
+
 # set local time
 ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
-mv /etc/locale.gen /etc/locale.gen.backup
+localectl set-keymap "us"
 locale-gen
+timedatectl set-ntp true
+
+# set link to systemd-resolved
+ln -sf /var/run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 # restore package cache if saved from previous install
 if [ -e /vagrant/pkg.tgz ]
