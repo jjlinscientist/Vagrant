@@ -17,7 +17,8 @@ library(devtools)
 repositories <- c(
                   "jjlinscientist/useful",
                   "jeffbhasin/handy",
-                  "mariodeng/FirebrowseR"
+                  "mariodeng/FirebrowseR",
+                  "jalvesaq/colorout"
                   )
 lapply(repositories, install_github)
 
