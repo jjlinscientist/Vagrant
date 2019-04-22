@@ -37,8 +37,8 @@ git clone https://github.com/jjlinscientist/tmux_config
 ln -sf /home/ubuntu/git/tmux_config/.tmux.conf /home/ubuntu/
 
 # change ownership of /home/ubuntu recursively
-cd /home/ubuntu
-chown -hR ubuntu:ubuntu .
+# cd /home/ubuntu
+# chown -hR ubuntu:ubuntu .
 
 # install other packages
 sudo apt install -y r-base r-base-dev libssl-dev libcurl4-openssl-dev libxml2-dev
