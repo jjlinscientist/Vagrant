@@ -35,6 +35,10 @@ rm -rf tmux_config
 git clone https://github.com/jjlinscientist/tmux_config
 ln -sf /home/jjlin/git/tmux_config/.tmux.conf /home/jjlin/
 
+# run nvim with :PlugInstall
+nvim +PlugInstall +qall > /dev/null
+nvim +UpdateRemotePlugins +qall > /dev/null
+
 # change ownership of /home/jjlin recursively
-cd /home/jjlin
-chown -hR jjlin:jjlin .
+# cd /home/jjlin
+# chown -hR jjlin:jjlin .
