@@ -36,6 +36,11 @@ rm -rf tmux_config
 git clone https://github.com/jjlinscientist/tmux_config
 ln -sf /home/ubuntu/git/tmux_config/.tmux.conf /home/ubuntu/
 
+# run nvim with :PlugInstall
+
+nvim +PlugInstall +qall > /dev/null
+nvim +UpdateRemotePlugins +qall > /dev/null
+
 # change ownership of /home/ubuntu recursively
 # cd /home/ubuntu
 # chown -hR ubuntu:ubuntu .
