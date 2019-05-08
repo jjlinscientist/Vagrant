@@ -45,5 +45,11 @@ nvim +UpdateRemotePlugins +qall > /dev/null
 # chown -hR ubuntu:ubuntu .
 
 # install other packages
-# apt install -y r-base r-base-dev libssl-dev libcurl4-openssl-dev libxml2-dev
-# apt install -y docker
+sudo apt install -y \
+  # r-base \
+  # r-base-dev \
+  # libssl-dev \
+  # libcurl4-openssl-dev \
+  # libxml2-dev \
+  docker.io \
+  awscli
