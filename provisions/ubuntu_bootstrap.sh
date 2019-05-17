@@ -61,9 +61,9 @@ nvim +UpdateRemotePlugins +qall > /dev/null
 # chown -hR ubuntu:ubuntu .
 
 # install other packages
-sudo apt install -y \
-  docker.io \
-  awscli
+# sudo apt install -y \
+  # docker.io \
+  # awscli
   # r-base \
   # r-base-dev \
   # libssl-dev \
