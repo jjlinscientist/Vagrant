@@ -53,8 +53,8 @@ ln -sf $HOME/git/tmux_config/.tmux.conf $HOME/
 
 # run nvim with :PlugInstall
 
-nvim +PlugInstall +qall > /dev/null
-nvim +UpdateRemotePlugins +qall > /dev/null
+$HOME/appimages/nvim/squashfs-root/usr/bin/nvim +PlugInstall +qall > /dev/null
+$HOME/appimages/nvim/squashfs-root/usr/bin/nvim +UpdateRemotePlugins +qall > /dev/null
 
 # change ownership of $HOME recursively
 # cd $HOME
