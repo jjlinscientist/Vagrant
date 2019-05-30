@@ -61,9 +61,9 @@ $HOME/appimages/nvim/squashfs-root/usr/bin/nvim +UpdateRemotePlugins +qall > /de
 # chown -hR ubuntu:ubuntu .
 
 # install other packages
-# sudo apt install -y \
-  # docker.io \
-  # awscli
+sudo apt install -y \
+  docker.io \
+  awscli
   # r-base \
   # r-base-dev \
   # libssl-dev \
