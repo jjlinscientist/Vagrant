@@ -12,7 +12,8 @@ sudo apt-get -y install \
   tmux \
   parallel \
   tree \
-  wget
+  wget \
+  docker.io
 
 # install neovim, optional dependencies
 mkdir -p $HOME/appimages/nvim/
