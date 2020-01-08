@@ -22,3 +22,15 @@ fi
 
 # update packages
 pacman -Syu --noconfirm
+pacman -S --noconfirm \
+  python-dev \
+  python-pip \
+  python3-dev \
+  python3-pip \
+  xclip \
+  tmux \
+  parallel \
+  tree \
+  wget \
+  docker.io
+
