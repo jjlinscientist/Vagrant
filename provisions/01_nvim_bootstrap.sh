@@ -39,5 +39,7 @@ ln -sf $HOME/git/tmux_config/.tmux.conf $HOME/
 
 # run nvim with :PlugInstall
 
+nvim +PlugInstall +qall >> /tmp/nvim_install.log
+nvim +UpdateRemotePlugins +qall >> /tmp/nvim_install.log
 $HOME/appimages/nvim/squashfs-root/usr/bin/nvim +PlugInstall +qall >> /tmp/nvim_install.log
 $HOME/appimages/nvim/squashfs-root/usr/bin/nvim +UpdateRemotePlugins +qall >> /tmp/nvim_install.log
