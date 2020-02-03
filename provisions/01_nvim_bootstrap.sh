@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # install neovim, optional dependencies
 mkdir -p $HOME/appimages/nvim/

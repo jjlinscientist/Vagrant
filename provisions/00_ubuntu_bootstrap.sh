@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # perpare environment for neovim install
 sudo apt-get -y update
