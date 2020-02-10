@@ -8,7 +8,9 @@ chmod a+x $HOME/appimages/nvim.appimage
 $HOME/appimages/nvim.appimage --appimage-extract
 mv squashfs-root $HOME/appimages/nvim/
 ln -sf $HOME/appimages/nvim/squashfs-root/usr/bin/nvim $HOME/exec/
-pip3 install neovim
+# pip3 install neovim
+pip install pynvim
+pip3 install pynvim
 
 # create github directory
 cd

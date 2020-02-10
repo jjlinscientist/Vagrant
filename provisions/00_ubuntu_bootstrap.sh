@@ -7,10 +7,13 @@ sudo apt-get -y install \
   software-properties-common \
   python-dev \
   python-pip \
+  python-dev \
+  python-pip \
   python3-dev \
   python3-pip \
   xclip \
   tmux \
+  curl \
   parallel \
   tree \
   wget \
