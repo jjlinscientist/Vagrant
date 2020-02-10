@@ -19,10 +19,6 @@ sudo apt-get -y install \
   wget \
   docker.io
 
-# change ownership of $HOME recursively
-# cd $HOME
-# chown -hR ubuntu:ubuntu .
-
 # install other packages
 # sudo apt install -y \
   # docker.io \
