@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # perpare environment for neovim install
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y install \
+apt-get -y update
+apt-get -y upgrade
+apt-get -y install \
   software-properties-common \
   python-dev \
   python-pip \
@@ -20,7 +20,7 @@ sudo apt-get -y install \
   docker.io
 
 # install other packages
-# sudo apt install -y \
+# apt install -y \
   # docker.io \
   # awscli
   # r-base \
