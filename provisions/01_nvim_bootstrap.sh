@@ -8,7 +8,8 @@ chmod a+x $HOME/appimages/nvim.appimage
 $HOME/appimages/nvim.appimage --appimage-extract
 mv squashfs-root $HOME/appimages/nvim/
 ln -sf $HOME/appimages/nvim/squashfs-root/usr/bin/nvim $HOME/exec/
-# pip3 install neovim
+pip install neovim
+pip3 install neovim
 pip install pynvim
 pip3 install pynvim
 
@@ -38,8 +39,3 @@ cd $HOME/git
 rm -rf tmux_config
 git clone https://github.com/jjlinscientist/tmux_config
 ln -sf $HOME/git/tmux_config/.tmux.conf $HOME/
-
-# run nvim with :PlugInstall
-
-# $HOME/appimages/nvim/squashfs-root/usr/bin/nvim +PlugInstall +qall >> /tmp/nvim_install.log
-# $HOME/appimages/nvim/squashfs-root/usr/bin/nvim +UpdateRemotePlugins +qall >> /tmp/nvim_install.log
