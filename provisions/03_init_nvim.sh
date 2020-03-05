@@ -1,6 +1,6 @@
 #!/bin/bash
 
-appimages_dir="/opt/appimages"
+appimages_dir="$HOME/appimages"
 
 source $HOME/.bashrc
 $appimages_dir/nvim/squashfs-root/usr/bin/nvim +PlugInstall +qall >> /dev/null

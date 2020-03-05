@@ -1,6 +1,6 @@
 #!/bin/bash
 
-appimages_dir="/opt/appimages"
+appimages_dir="$HOME/appimages"
 
 # get nvim appimage
 mkdir -p $appimages_dir/nvim/
@@ -9,7 +9,7 @@ chmod a+x $appimages_dir/nvim.appimage
 $appimages_dir/nvim.appimage --appimage-extract
 mv -f squashfs-root $appimages_dir/nvim/
 chmod a+x -R $appimages_dir/nvim/
-ln -sf $appimages_dir/nvim/squashfs-root/usr/bin/nvim /usr/local/bin
+sudo ln -sf $appimages_dir/nvim/squashfs-root/usr/bin/nvim /usr/local/bin
 
 # install neovim dependencies
 pip install neovim
