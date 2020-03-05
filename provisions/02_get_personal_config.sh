@@ -1,18 +1,5 @@
 #!/bin/bash
 
-# install neovim, optional dependencies
-mkdir -p $HOME/appimages/nvim/
-mkdir -p $HOME/exec/
-wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -O $HOME/appimages/nvim.appimage
-chmod a+x $HOME/appimages/nvim.appimage
-$HOME/appimages/nvim.appimage --appimage-extract
-mv squashfs-root $HOME/appimages/nvim/
-ln -sf $HOME/appimages/nvim/squashfs-root/usr/bin/nvim $HOME/exec/
-pip install neovim
-pip3 install neovim
-pip install pynvim
-pip3 install pynvim
-
 # create github directory
 cd
 mkdir -p $HOME/git
