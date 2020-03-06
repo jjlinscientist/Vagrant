@@ -9,10 +9,5 @@ chmod a+x $appimages_dir/nvim.appimage
 $appimages_dir/nvim.appimage --appimage-extract
 mv -f squashfs-root $appimages_dir/nvim/
 chmod a+x -R $appimages_dir/nvim/
-sudo ln -sf $appimages_dir/nvim/squashfs-root/usr/bin/nvim /usr/local/bin
-
-# # install neovim dependencies
-# pip install neovim
-# pip3 install neovim
-# pip install pynvim
-# pip3 install pynvim
+mkdir -p $HOME/exec
+ln -sf $appimages_dir/nvim/squashfs-root/usr/bin/nvim $HOME/exec
