@@ -6,3 +6,4 @@
 # pip3 install neovim
 # pip install --upgrade pynvim
 pip3 install --upgrade pynvim
+pip3 install --user jedi
