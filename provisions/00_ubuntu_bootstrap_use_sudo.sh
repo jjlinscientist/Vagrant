@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# perpare environment for neovim install
+# prepare environment for neovim install
 apt-get -y update
 apt-get -y upgrade
 apt-get -y install \
   software-properties-common \
-  python-dev \
-  python-pip \
   python-dev \
   python-pip \
   python3-dev \
@@ -17,7 +15,6 @@ apt-get -y install \
   parallel \
   tree \
   wget \
-  docker.io
 
 # install other packages
 # apt install -y \
