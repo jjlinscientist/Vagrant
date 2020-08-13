@@ -1,12 +1,11 @@
 #!/bin/bash
 
-# prepare environment for neovim install
+# prepare environment
 apt-get -y update
 apt-get -y upgrade
 apt-get -y install \
   software-properties-common \
-  python-dev \
-  python-pip \
+  wget \
   python3-dev \
   python3-pip \
   xclip \
@@ -14,7 +13,6 @@ apt-get -y install \
   curl \
   parallel \
   tree \
-  wget \
 
 # install other packages
 # apt install -y \
