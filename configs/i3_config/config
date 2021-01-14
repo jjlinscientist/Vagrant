@@ -25,28 +25,26 @@ set $mod Mod4
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-font -xos4-terminus-medium-r-normal--16-*-*-*-*-*-*-*
+font -xos4-terminus-medium-r-normal--17-*-*-*-*-*-*-*
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec /home/jjlin/cmd_term.sh
+#bindsym $mod+Return exec --no-startup-id /home/jjlin/cmd_term.sh
 #bindsym $mod+Return exec i3-sensible-terminal archey3
-bindsym $mod+Return		exec xterm
+bindsym $mod+Return		exec --no-startup-id xterm
 
 # kill focused window
 bindsym $mod+q			kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
-
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-#bindsym $mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -nb black -nf green -sb green -sf black -fn "Inconsolata Bold"' --entry-type=command
 
-bindsym	$mod+d		exec dmenu_run -nb black -nf green -sb green -sf black -fn "xos4 Terminus"
+#bindsym $mod+d			exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -nb black -nf green -sb green -sf black -fn "Inconsolata Bold"' --entry-type=command
+bindsym	$mod+d		exec --no-startup-id dmenu_run -nb black -nf green -sb green -sf black -fn "xos4 Terminus:pixelsize=20"
 
 # change focus
 #bindsym $mod+j			focus left
@@ -129,7 +127,7 @@ bindsym $mod+Shift+c		reload
 bindsym $mod+Shift+r		restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e		exec "i3-nagbar -f -xos4-terminus-medium-r-normal--16-*-*-*-*-*-*-* -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e		exec --no-startup-id "i3-nagbar -f -xos4-terminus-medium-r-normal--18-*-*-*-*-*-*-* -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -157,9 +155,7 @@ bindsym $mod+r			mode "resize"
 # finds out, if available)
 bar {
 	position top
-        #status_command i3status
-	status_command py3status -c $HOME/.i3/i3status.conf
-	#status_command $HOME/exec/conky-i3bar
+	status_command py3status
 	colors {
         	background #000000
 	        statusline #ffffff
@@ -185,31 +181,39 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # App hot launches
-bindsym $mod+Shift+f			exec firejail firefox
-bindsym	$mod+Shift+g			exec firejail chromium
+bindsym $mod+Shift+f		    	exec --no-startup-id firejail firefox
+# bindsym	$mod+Shift+g			exec --no-startup-id firejail chromium
 
 # custom screenshot control
-bindsym --release Print			exec notify-send "Taking screenshot of display" && exec import -window root $HOME/Pictures/screenshots/$(date +%F_%H%M%S)_screen.png
-bindsym --release $mod+Print		exec notify-send "Taking screenshot of active window" && exec import -window "$activeWinId" $HOME/Pictures/screenshots/$(date +%F_%H%M%S)_window.png 
-bindsym	--release $mod+Shift+Print	exec notify-send "Select area for screenshot" && exec import $HOME/Pictures/screenshots/$(date +%F_%H%M%S)_selected.png
+bindsym --release Print			    exec --no-startup-id notify-send "Taking screenshot of display" && \
+                                    exec import -window root $HOME/screenshots/$(date +%F_%H%M%S)_screen.png && \
+bindsym --release $mod+Print        exec --no-startup-id notify-send "Taking screenshot of active window" && \
+                                    exec import -window "$activeWinId" $HOME/screenshots/$(date +%F_%H%M%S)_window.png 
+bindsym	--release $mod+Shift+Print	exec --no-startup-id notify-send "Select area for screenshot" && \
+                                    exec import $HOME/screenshots/$(date +%F_%H%M%S)_selected.png && \
+                                    exec --no-startup-id notify-send "Taking screenshot of selection"
+
 
 # pulseaudio control
-bindsym XF86AudioMicMute		exec amixer set Capture toggle
-bindsym XF86AudioLowerVolume		exec amixer set Master 5db-
-bindsym XF86AudioRaiseVolume		exec amixer set Master 5db+
-bindsym XF86AudioMute			exec amixer sset Master toggle
+bindsym XF86AudioMicMute	    	exec --no-startup-id amixer set Capture toggle
+bindsym XF86AudioLowerVolume		exec --no-startup-id amixer set Master 5db-
+bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer set Master 5db+
+bindsym XF86AudioMute			    exec --no-startup-id amixer sset Master toggle
 
 # custom bluetooth control
-#bindsym $mod+F5			exec pkexec bluetooth toggle && exec notify-send "$(bluetooth)"
+#bindsym $mod+F5		        	exec pkexec bluetooth toggle && exec notify-send "$(bluetooth)"
 
-# alternating layouts script -- setting this in .i3/config is no longer needed!
-#exec --no-startup-id ~/git/i3-alternating-layout/alternating_layouts.py
+# manual lockscreen triggers
+bindsym	$mod+l				        exec --no-startup-id notify-send "Preparing to lock screen" && exec i3lock-fancy -pf Inconsolata-Regular #-- scrot -z
+
+# Alternating layouts
+# Install by
+# pacman -S python-i3ipc
+# git clone https://github.com/olemartinorg/i3-alternating-layout
+exec --no-startup-id alternating_layouts.py
 
 # polkit startup
 #exec --no-startup-id lxqt-policykit-agent
 
 # lockscreen settings
 #exec --no-startup-id xss-lock -- $HOME/.i3/lock
-
-# manual lockscreen triggers
-bindsym	$mod+l				exec notify-send "Preparing to lock screen" && exec i3lock-fancy -pf Inconsolata-Regular #-- scrot -z

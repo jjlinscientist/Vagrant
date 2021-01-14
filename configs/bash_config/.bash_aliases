@@ -30,4 +30,4 @@ alias sab='ssh-agent bash'
 alias docker='sudo docker'
 
 # Alias for pacman
-# alias pacman='sudo pacman'
+alias pacman='sudo pacman'
