@@ -182,17 +182,12 @@ client.background       #ffffff
 
 # App hot launches
 bindsym $mod+Shift+f		    	exec --no-startup-id firejail firefox
-# bindsym	$mod+Shift+g			exec --no-startup-id firejail chromium
+bindsym	$mod+Shift+g		    	exec --no-startup-id firejail chromium
 
 # custom screenshot control
-bindsym --release Print			    exec --no-startup-id notify-send "Taking screenshot of display" && \
-                                    exec import -window root $HOME/screenshots/$(date +%F_%H%M%S)_screen.png && \
-bindsym --release $mod+Print        exec --no-startup-id notify-send "Taking screenshot of active window" && \
-                                    exec import -window "$activeWinId" $HOME/screenshots/$(date +%F_%H%M%S)_window.png 
-bindsym	--release $mod+Shift+Print	exec --no-startup-id notify-send "Select area for screenshot" && \
-                                    exec import $HOME/screenshots/$(date +%F_%H%M%S)_selected.png && \
-                                    exec --no-startup-id notify-send "Taking screenshot of selection"
-
+bindsym --release Print			    exec --no-startup-id notify-send "Taking screenshot of display" && exec import -window root $HOME/screenshots/$(date +%F_%H%M%S)_screen.png
+bindsym --release $mod+Print        exec --no-startup-id notify-send "Taking screenshot of active window" && exec import -window "$activeWinId" $HOME/screenshots/$(date +%F_%H%M%S)_window.png 
+bindsym	--release $mod+Shift+Print	exec --no-startup-id notify-send "Select area for screenshot..." && exec import $HOME/screenshots/$(date +%F_%H%M%S)_selected.png
 
 # pulseaudio control
 bindsym XF86AudioMicMute	    	exec --no-startup-id amixer set Capture toggle
@@ -201,10 +196,10 @@ bindsym XF86AudioRaiseVolume		exec --no-startup-id amixer set Master 5db+
 bindsym XF86AudioMute			    exec --no-startup-id amixer sset Master toggle
 
 # custom bluetooth control
-#bindsym $mod+F5		        	exec pkexec bluetooth toggle && exec notify-send "$(bluetooth)"
+#bindsym $mod+F5		        	exec --no-startup-id pkexec bluetooth toggle && exec notify-send "$(bluetooth)"
 
 # manual lockscreen triggers
-bindsym	$mod+l				        exec --no-startup-id notify-send "Preparing to lock screen" && exec i3lock-fancy -pf Inconsolata-Regular #-- scrot -z
+bindsym	$mod+l				        exec --no-startup-id notify-send "Preparing to lock screen" && exec i3lock-fancy -p
 
 # Alternating layouts
 # Install by
