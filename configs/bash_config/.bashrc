@@ -147,12 +147,12 @@ export VIMINIT='source $MYVIMRC'
 export PATH=$PATH:$HOME/exec/
 export PATH=$PATH:$HOME/.local/bin
 
-## run archey3 script
-# if [ "$USER" = "root" ]; then
-#   archey3 -c red
-# else
-#   archey3 -c cyan
-# fi
+# run archey3 script
+if [ "$USER" = "root" ]; then
+  archey3 -c red
+else
+  archey3 -c cyan
+fi
 
 # python-virtualenvwrapper setup
 #export WORKON_HOME=~/.virtualenvs
