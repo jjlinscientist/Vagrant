@@ -86,5 +86,5 @@ hi ColorColumn ctermbg=000000 guibg=000000
 
 " use molokai when -diff
 if &diff
-  colorscheme ron
+  colorscheme molokai
 endif
