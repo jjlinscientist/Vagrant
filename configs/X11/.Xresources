@@ -1,0 +1,12 @@
+URxvt*font: -xos4-terminus-medium-r-normal--16-*-*-*-*-*-*-*
+XTerm*foreground: white
+XTerm*background: black
+XTerm*font: -xos4-terminus-medium-r-normal--16-*-*-*-*-*-*-*
+XTerm*allowBoldFonts: false
+XTerm.termName: xterm-256color
+XTerm.vt100.metaSendsEscape: true
+XTerm.vt100.saveLines: 4096
+#XTerm.vt100.scrollBar: true
+#XTerm.vt100.scrollbar.width: 8
+! Xterm*renderFont: false
+# refer to https://wiki.archlinux.org/index.php/Xterm#Automatic_transparency for instructions on using a composite manager to set xterm transparency 
