@@ -157,9 +157,9 @@ bindsym $mod+r			mode "resize"
 # finds out, if available)
 bar {
 	position top
-        #status_command i3status
+    # status_command i3status
+	# status_command $HOME/exec/conky-i3bar
 	status_command py3status -c $HOME/.config/i3/i3status.conf
-	#status_command $HOME/exec/conky-i3bar
 	colors {
         	background #000000
 	        statusline #ffffff
@@ -175,9 +175,20 @@ bar {
 	tray_output HDMI-2
 	tray_output HDMI-3
 }
-new_window 1pixel
+
+# new windows
+new_window pixel 2
+new_float pixel 2
+
+# gaps
+gaps inner 7
+gaps outer 0
+
+smart_gaps on
+# smart_gaps inverse_outer
+
 # class                 border  backgr. text    indicator child_border
-client.focused          #000000 #00ff00 #000000 #2e9ef4   #00ff00
+client.focused          #000000 #00ff00 #000000 #2e9ef4   #333333
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -187,6 +198,16 @@ client.background       #ffffff
 # App hot launches
 bindsym $mod+Shift+f			exec --no-startup-id firejail firefox
 bindsym	$mod+Shift+g			exec --no-startup-id firejail chromium
+
+# App window defaults
+# Layout
+for_window [class="(?i)feh"] floating enable
+for_window [class="(?i)arandr"] floating enable
+for_window [class="(?i)lxappearance"] floating enable
+# for_window [class="(?i)VirtualBox"] floating enable
+# for_window [class="(?i)mplayer2"] floating enable
+# for_window [instance="(?i)mplayer2"] floating enable
+
 
 # custom screenshot control
 bindsym --release Print			exec --no-startup-id notify-send "Taking screenshot of display" && exec import -window root $HOME/Pictures/screenshots/$(date +%F_%H%M%S)_screen.png
