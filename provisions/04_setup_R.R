@@ -3,11 +3,11 @@
 # CRAN 
 #----------------------------------------
 packages <- c(
-              "data.table",
               "RColorBrewer",
+              "BiocManager",
+              "data.table",
               "tidyverse",
               "devtools",
-              "BiocManager"
               )
 install.packages(packages)
 
@@ -15,19 +15,9 @@ install.packages(packages)
 #----------------------------------------
 library(devtools)
 repositories <- c(
+                  "mariodeng/FirebrowseR",
                   "jjlinscientist/useful",
                   "jeffbhasin/handy",
-                  "mariodeng/FirebrowseR",
                   "jalvesaq/colorout"
                   )
 lapply(repositories, install_github)
-
-# Bioconductor
-#----------------------------------------
-library("BiocManager")
-BiocPackages <- c(
-                  "rtracklayer",
-                  "biomaRt"
-                  )
-BiocManager::install(BiocPackages)
-
