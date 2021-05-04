@@ -7,7 +7,7 @@ packages <- c(
               "BiocManager",
               "data.table",
               "tidyverse",
-              "devtools",
+              "devtools"
               )
 install.packages(packages)
 
@@ -15,9 +15,7 @@ install.packages(packages)
 #----------------------------------------
 library(devtools)
 repositories <- c(
-                  "mariodeng/FirebrowseR",
                   "jjlinscientist/useful",
-                  "jeffbhasin/handy",
                   "jalvesaq/colorout"
                   )
 lapply(repositories, install_github)

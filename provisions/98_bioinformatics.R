@@ -13,3 +13,13 @@ BiocPackages <- c(
                   "biomaRt"
                   )
 BiocManager::install(BiocPackages)
+
+# github
+# ============================================================= 
+library(devtools)
+repositories <- c(
+                  # "mariodeng/FirebrowseR",
+                  "jeffbhasin/handy"
+                  )
+lapply(repositories, install_github)             
+
