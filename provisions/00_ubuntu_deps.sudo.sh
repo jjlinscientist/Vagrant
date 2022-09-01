@@ -12,7 +12,7 @@ apt-get -y install \
   python3-dev \
   python3-pip \
   xclip \
-  tmux \
   curl \
+  tmux \
   parallel \
   tree \
